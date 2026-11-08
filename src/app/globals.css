@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-bg: #f5f2ff;
+  --color-app-bg-2: #fcfbff;
+  --color-panel: #ffffff;
+  --color-panel-soft: #f3efff;
+  --color-panel-muted: #f7f7fb;
+  --color-border: #e7e5f4;
+  --color-border-strong: #d8d1f1;
+  --color-primary: #7c5cff;
+  --color-primary-dark: #6848f0;
+  --color-primary-soft: #efeaff;
+  --color-ink: #1f2340;
+  --color-dim: #8f97ba;
+  --color-green: #10b981;
+  --color-green-soft: #e9fbf4;
+  --color-red: #ff4f7a;
+  --color-red-soft: #fff0f4;
+  --color-yellow: #f59e0b;
+  --color-yellow-soft: #fff7e7;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(124, 92, 255, 0.16), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(157, 255, 221, 0.14), transparent 22%),
+    linear-gradient(180deg, #f5f2ff 0%, #fcfbff 100%);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: rgba(124, 92, 255, 0.18);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8d1f1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b9afe7;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.app-shell {
+  box-shadow:
+    0 30px 80px rgba(90, 73, 178, 0.12),
+    0 10px 30px rgba(31, 35, 64, 0.06);
+}
+
+.soft-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(31, 35, 64, 0.05);
+}
+
+.soft-chip {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 10px rgba(31, 35, 64, 0.04);
+}
+
+.metric-strip {
+  background: linear-gradient(180deg, #f3efff 0%, #f7f4ff 100%);
+  border: 1px solid #ece7fb;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── ripple ─────────────────────────── */
+@keyframes ripple {
+  0%   { transform: scale(0);   opacity: 1;   }
+  70%  { transform: scale(1);   opacity: 0.4; }
+  100% { transform: scale(1.1); opacity: 0;   }
+}
+
+.animate-ripple {
+  animation: ripple 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+/* ── tilt perspective wrapper ───────── */
+.tilt-wrap {
+  perspective: 800px;
+}
